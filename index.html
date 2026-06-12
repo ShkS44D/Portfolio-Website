@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muhammad Saad Ahmed — Cybersecurity Professional specializing in penetration testing, vulnerability assessment, and security tool development." />
+  <title>Muhammad Saad Ahmed | Cybersecurity Professional</title>
+
+  <!-- Fonts: Orbitron (display) · Rajdhani (heading/body) · Share Tech Mono (code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══ LOADING SCREEN ══════════════════════════════════════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">S44D</div>
+      <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      <div class="loader-status">INITIALIZING SYSTEMS...</div>
+    </div>
+  </div>
+
+  <!-- ══ CANVAS BACKGROUND ═══════════════════════════════════════ -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ══ SCANLINES ════════════════════════════════════════════════ -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- ══ CUSTOM CURSOR ════════════════════════════════════════════ -->
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor-dot"  id="cursor-dot"  aria-hidden="true"></div>
+
+  <!-- ══ NAVIGATION ═══════════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="lb">[</span>S44D<span class="lb">]</span>
+      </a>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#about"         class="nav-link">About</a>
+        <a href="#skills"        class="nav-link">Skills</a>
+        <a href="#projects"      class="nav-link">Projects</a>
+        <a href="#experience"    class="nav-link">Experience</a>
+        <a href="#network-tools" class="nav-link">Net Tools</a>
+        <a href="#contact"       class="nav-link nav-cta">Contact</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-hidden="true">
+    <a href="#about"         class="drawer-link">About</a>
+    <a href="#skills"        class="drawer-link">Skills</a>
+    <a href="#projects"      class="drawer-link">Projects</a>
+    <a href="#experience"    class="drawer-link">Experience</a>
+    <a href="#network-tools" class="drawer-link">Net Tools</a>
+    <a href="#contact"       class="drawer-link">Contact</a>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       HERO
+       ══════════════════════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-grid">
+
+      <!-- Left column: content -->
+      <div class="hero-content">
+        <div class="hero-status">
+          <span class="status-dot" aria-hidden="true"></span>
+          Available for Opportunities
+        </div>
+
+        <p class="hero-greeting">Hello, World! I'm</p>
+
+        <h1 class="hero-name glitch" data-text="MUHAMMAD SAAD AHMED">
+          MUHAMMAD SAAD AHMED
+        </h1>
+
+        <div class="hero-typewriter" aria-live="polite">
+          <span class="tw-caret">&gt;&nbsp;</span>
+          <span id="tw-text"></span><span class="tw-cursor" aria-hidden="true">▊</span>
+        </div>
+
+        <p class="hero-bio">
+          Cybersecurity professional crafting cutting-edge defense solutions — from a network IDS achieving
+          <span class="c-cyan">99.8% precision</span> to smart contract auditors. Specialized in penetration
+          testing, SIEM operations, and building tools that make networks
+          <span class="c-magenta">harder to crack</span>.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            View Projects
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+        </div>
+
+        <div class="hero-meta">
+          <span class="meta-pill">📍 Islamabad, Pakistan</span>
+          <a href="mailto:shksaad2003@gmail.com" class="meta-pill meta-link">📧 shksaad2003@gmail.com</a>
+          <span class="meta-pill">📱 +92 310 5039260</span>
+        </div>
+      </div>
+
+      <!-- Right column: visual cards grid -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hex-grid">
+          <div class="hex-card"><div class="hex-icon">🛡️</div><div class="hex-lbl">Pen Testing</div></div>
+          <div class="hex-card"><div class="hex-icon">📊</div><div class="hex-lbl">SIEM Ops</div></div>
+          <div class="hex-card"><div class="hex-icon">⚡</div><div class="hex-lbl">CVE Analysis</div></div>
+          <div class="hex-card feat">
+            <div class="hex-val">99.8%</div>
+            <div class="hex-lbl">IDS Precision</div>
+          </div>
+          <div class="hex-card"><div class="hex-icon">🕸️</div><div class="hex-lbl">Network IDS</div></div>
+          <div class="hex-card"><div class="hex-icon">🔑</div><div class="hex-lbl">Web Security</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll to explore</span>
+      <div class="scroll-bar"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       ABOUT  //01
+       ══════════════════════════════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <header class="sec-header reveal">
+        <span class="sec-tag">// 01</span>
+        <h2 class="sec-title">About Me</h2>
+      </header>
+
+      <div class="about-grid">
+        <div class="about-body reveal">
+          <p>
+            I'm a <span class="hl">Cybersecurity professional</span> pursuing my Bachelor's degree in
+            Cyber Security at CASE Sir Syed Institute of Technology, Islamabad. My passion lives at the
+            intersection of <span class="hl">offensive security</span> and building defensive tools that
+            make a real difference.
+          </p>
+          <p>
+            Through internships at <span class="hl-m">Askari Bank</span> and
+            <span class="hl-m">KaiRiz Cyber Technology</span>, I've operated in live SIEM environments,
+            conducted vulnerability assessments, and delivered actionable remediation reports. I thrive where
+            I can <em>think like an attacker</em> and architect robust defenses.
+          </p>
+          <p>
+            I'm actively working toward becoming a proficient penetration tester and contributing to the
+            security community through <span class="hl">bug bounty hunting</span> and open-source
+            security tooling.
+          </p>
+
+          <div class="stats-row">
+            <div class="stat-box">
+              <span class="stat-n">2+</span>
+              <span class="stat-l">Internships</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-n">4+</span>
+              <span class="stat-l">Projects</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-n">2</span>
+              <span class="stat-l">Certifications</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-n">Jr.</span>
+              <span class="stat-l">THM Path</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card reveal">
+          <div class="code-card">
+            <div class="code-bar">
+              <span class="dot-r"></span><span class="dot-o"></span><span class="dot-g"></span>
+              <span class="code-filename">profile.json</span>
+            </div>
+            <pre class="code-body"><code>{
+  <span class="jk">"name"</span>:     <span class="jv">"Muhammad Saad Ahmed"</span>,
+  <span class="jk">"role"</span>:     <span class="jv">"Cybersecurity Professional"</span>,
+  <span class="jk">"location"</span>: <span class="jv">"Islamabad, PK"</span>,
+  <span class="jk">"degree"</span>:   <span class="jv">"BS Cyber Security"</span>,
+  <span class="jk">"interests"</span>: [
+    <span class="jv">"Penetration Testing"</span>,
+    <span class="jv">"Bug Bounty Hunting"</span>,
+    <span class="jv">"Network Defence"</span>,
+    <span class="jv">"Security Research"</span>
+  ],
+  <span class="jk">"status"</span>:   <span class="js">"open_to_work"</span>
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SKILLS  //02
+       ══════════════════════════════════════════════════════════════ -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <header class="sec-header reveal">
+        <span class="sec-tag">// 02</span>
+        <h2 class="sec-title">Technical Arsenal</h2>
+      </header>
+
+      <div class="skills-grid">
+
+        <div class="skill-cat reveal" style="--d:0s">
+          <h3 class="cat-title"><span>🔧</span> Security Tools</h3>
+          <div class="tag-cloud">
+            <span class="tag">Kali Linux</span><span class="tag">Nmap</span>
+            <span class="tag">Wireshark</span><span class="tag">Burp Suite</span>
+            <span class="tag">Metasploit</span><span class="tag">SQLmap</span>
+            <span class="tag">Slither</span>
+          </div>
+        </div>
+
+        <div class="skill-cat reveal" style="--d:.08s">
+          <h3 class="cat-title"><span>🛡️</span> Security Operations</h3>
+          <div class="tag-cloud">
+            <span class="tag">SIEM</span><span class="tag">EDR</span>
+            <span class="tag">Log Analysis</span><span class="tag">Incident Response</span>
+            <span class="tag">Threat Intelligence</span><span class="tag">OSINT</span>
+            <span class="tag">Network Forensics</span>
+          </div>
+        </div>
+
+        <div class="skill-cat reveal" style="--d:.16s">
+          <h3 class="cat-title"><span>💻</span> Programming</h3>
+          <div class="tag-cloud">
+            <span class="tag">Python</span><span class="tag">Flask</span>
+            <span class="tag">Streamlit</span><span class="tag">C++</span>
+            <span class="tag">SQL</span><span class="tag">Bash</span>
+            <span class="tag">Solidity</span>
+          </div>
+        </div>
+
+        <div class="skill-cat reveal" style="--d:.24s">
+          <h3 class="cat-title"><span>🌐</span> Networking & Web Security</h3>
+          <div class="tag-cloud">
+            <span class="tag">TCP/IP</span><span class="tag">DNS</span>
+            <span class="tag">VPNs</span><span class="tag">Subnetting</span>
+            <span class="tag">OWASP Top 10</span><span class="tag">XSS</span>
+            <span class="tag">SQL Injection</span>
+          </div>
+        </div>
+
+        <div class="skill-cat reveal" style="--d:.32s">
+          <h3 class="cat-title"><span>🤖</span> AI & Data Science</h3>
+          <div class="tag-cloud">
+            <span class="tag">Random Forest</span><span class="tag">Scikit-learn</span>
+            <span class="tag">Feature Engineering</span><span class="tag">Plotly</span>
+          </div>
+        </div>
+
+        <div class="skill-cat reveal" style="--d:.40s">
+          <h3 class="cat-title"><span>⚙️</span> Platforms & Tools</h3>
+          <div class="tag-cloud">
+            <span class="tag">Docker</span><span class="tag">Git</span>
+            <span class="tag">VirtualBox</span><span class="tag">VMware</span>
+            <span class="tag">Linux (Ubuntu/Kali)</span><span class="tag">Windows</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       PROJECTS  //03
+       ══════════════════════════════════════════════════════════════ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <header class="sec-header reveal">
+        <span class="sec-tag">// 03</span>
+        <h2 class="sec-title">Featured Projects</h2>
+      </header>
+
+      <div class="projects-grid">
+
+        <!-- Sentinel AI -->
+        <article class="proj-card reveal" style="--d:0s">
+          <div class="proj-inner">
+            <div class="proj-top">
+              <span class="proj-icon" aria-hidden="true">🧠</span>
+              <span class="badge badge-done">Complete</span>
+            </div>
+            <h3 class="proj-title">Sentinel AI</h3>
+            <p class="proj-sub">Network Intrusion Detection System</p>
+            <p class="proj-desc">
+              High-performance IDS built with Python and Streamlit to monitor real-time network traffic.
+              A Random Forest model delivers <strong>99.8% precision</strong> for anomaly detection,
+              making it production-grade from day one.
+            </p>
+            <div class="proj-tags">
+              <span class="ptag">Python</span><span class="ptag">Streamlit</span>
+              <span class="ptag">Random Forest</span><span class="ptag">Scikit-learn</span>
+            </div>
+            <div class="proj-foot">
+              <a href="#" class="proj-link" aria-label="View Sentinel AI on GitHub">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.05.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub Repo
+              </a>
+              <span class="proj-stat-badge">99.8% Precision</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Solidity Sentinel -->
+        <article class="proj-card reveal" style="--d:.1s">
+          <div class="proj-inner">
+            <div class="proj-top">
+              <span class="proj-icon" aria-hidden="true">⛓️</span>
+              <span class="badge badge-done">Complete</span>
+            </div>
+            <h3 class="proj-title">Solidity Sentinel</h3>
+            <p class="proj-sub">Smart Contract Security Auditor</p>
+            <p class="proj-desc">
+              Flask-based auditing tool for Ethereum smart contracts using Slither. Automatically detects
+              critical vulnerabilities like Re-entrancy and Gas issues, and assigns an automated
+              risk score per contract.
+            </p>
+            <div class="proj-tags">
+              <span class="ptag">Python</span><span class="ptag">Flask</span>
+              <span class="ptag">Slither</span><span class="ptag">Solidity</span>
+            </div>
+            <div class="proj-foot">
+              <a href="#" class="proj-link" aria-label="View Solidity Sentinel on GitHub">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.05.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub Repo
+              </a>
+              <span class="proj-stat-badge magenta">Ethereum</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- VulnScanner -->
+        <article class="proj-card reveal" style="--d:.2s">
+          <div class="proj-inner">
+            <div class="proj-top">
+              <span class="proj-icon" aria-hidden="true">🔍</span>
+              <span class="badge badge-done">Complete</span>
+            </div>
+            <h3 class="proj-title">VulnScanner</h3>
+            <p class="proj-sub">Multi-threaded Web & Network Scanner</p>
+            <p class="proj-desc">
+              Modular Python scanner with multithreaded port scanning, OS fingerprinting, NVD CVE
+              lookup integration, and automated web crawling to surface misconfigured services and
+              known vulnerabilities.
+            </p>
+            <div class="proj-tags">
+              <span class="ptag">Python</span><span class="ptag">Multithreading</span>
+              <span class="ptag">NVD CVE</span><span class="ptag">OSINT</span>
+            </div>
+            <div class="proj-foot">
+              <a href="#" class="proj-link" aria-label="View VulnScanner on GitHub">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.05.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub Repo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Vanguard SIEM -->
+        <article class="proj-card reveal" style="--d:.3s">
+          <div class="proj-inner">
+            <div class="proj-top">
+              <span class="proj-icon" aria-hidden="true">📡</span>
+              <span class="badge badge-wip">In Progress</span>
+            </div>
+            <h3 class="proj-title">Vanguard SIEM</h3>
+            <p class="proj-sub">Threat Detection & Log Correlation</p>
+            <p class="proj-desc">
+              Lightweight SIEM designed for centralized log aggregation and event correlation. Custom
+              detection rules drive real-time alerting and structured incident response workflows for
+              rapid threat triage.
+            </p>
+            <div class="proj-tags">
+              <span class="ptag">SIEM</span><span class="ptag">Log Correlation</span>
+              <span class="ptag">Python</span><span class="ptag">Alerting</span>
+            </div>
+            <div class="proj-foot">
+              <div class="wip-bar-wrap">
+                <div class="wip-bar-label">
+                  <span>Development Progress</span><span>65%</span>
+                </div>
+                <div class="wip-track"><div class="wip-fill" style="width:65%"></div></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       EXPERIENCE & CERTS  //04
+       ══════════════════════════════════════════════════════════════ -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <header class="sec-header reveal">
+        <span class="sec-tag">// 04</span>
+        <h2 class="sec-title">Experience & Credentials</h2>
+      </header>
+
+      <div class="exp-grid">
+
+        <!-- Work Experience -->
+        <div class="exp-col reveal">
+          <h3 class="col-label">Work Experience</h3>
+          <div class="timeline">
+
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-card">
+                <div class="tl-head">
+                  <div>
+                    <div class="tl-role">IT Intern</div>
+                    <div class="tl-company">Askari Bank</div>
+                  </div>
+                  <div class="tl-date">Jul – Sep 2024</div>
+                </div>
+                <ul class="tl-points">
+                  <li>Monitored SIEM dashboards and analyzed logs to identify anomalous network activity and potential threats.</li>
+                  <li>Conducted vulnerability assessments on internal systems, documenting findings and escalating critical risks to senior staff.</li>
+                </ul>
+                <div class="tl-tags">
+                  <span class="ttag">SIEM</span>
+                  <span class="ttag">Vulnerability Assessment</span>
+                  <span class="ttag">Log Analysis</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-dot magenta"></div>
+              <div class="tl-card">
+                <div class="tl-head">
+                  <div>
+                    <div class="tl-role">Cybersecurity Intern</div>
+                    <div class="tl-company">KaiRiz Cyber Technology</div>
+                  </div>
+                  <div class="tl-date">Jun – Jul 2024</div>
+                </div>
+                <ul class="tl-points">
+                  <li>Performed reconnaissance and scanning using OSINT techniques and Nmap during security assessments.</li>
+                  <li>Reviewed EDR alerts, analyzed security controls, and delivered written remediation reports for identified vulnerabilities.</li>
+                </ul>
+                <div class="tl-tags">
+                  <span class="ttag">OSINT</span>
+                  <span class="ttag">Nmap</span>
+                  <span class="ttag">EDR</span>
+                  <span class="ttag">Remediation Reports</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Certs + Education -->
+        <div class="cred-col reveal">
+
+          <h3 class="col-label">Certifications</h3>
+          <div class="cred-list">
+            <div class="cred-card">
+              <span class="cred-icon" aria-hidden="true">🏆</span>
+              <div>
+                <div class="cred-title">Junior Penetration Tester</div>
+                <div class="cred-org">TryHackMe Learning Path</div>
+                <div class="cred-meta">
+                  <span>Issued Jul 2025</span>
+                  <span class="cred-id">ID: THM-J4NM05NDNN</span>
+                </div>
+              </div>
+            </div>
+            <div class="cred-card">
+              <span class="cred-icon" aria-hidden="true">🔐</span>
+              <div>
+                <div class="cred-title">Critical Infrastructure Protection (ICIP)</div>
+                <div class="cred-org">OPSWAT Academy</div>
+                <div class="cred-meta">
+                  <span>Issued Aug 2025</span>
+                  <span class="cred-id">ID: gefl4pLjJQ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="col-label" style="margin-top:2rem">Education</h3>
+          <div class="cred-list">
+            <div class="cred-card">
+              <span class="cred-icon" aria-hidden="true">🎓</span>
+              <div>
+                <div class="cred-title">Bachelor in Cyber Security</div>
+                <div class="cred-org">CASE Sir Syed Institute of Technology, Islamabad</div>
+                <div class="cred-meta"><span>2023 – Present</span></div>
+              </div>
+            </div>
+            <div class="cred-card">
+              <span class="cred-icon" aria-hidden="true">📚</span>
+              <div>
+                <div class="cred-title">Intermediate in Computer Science</div>
+                <div class="cred-org">HITEC College, Taxila</div>
+                <div class="cred-meta"><span>2021 – 2023</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       NETWORK TOOLS  //05
+       ══════════════════════════════════════════════════════════════ -->
+  <section id="network-tools" class="section">
+    <div class="container">
+      <header class="sec-header reveal">
+        <span class="sec-tag">// 05</span>
+        <h2 class="sec-title">Network Tools</h2>
+        <p class="sec-sub">Live DNS Lookup &amp; Reverse IP Resolution — powered by Google Public DNS</p>
+      </header>
+
+      <div class="tool-wrap reveal">
+        <div class="terminal-card">
+
+          <!-- Terminal title bar -->
+          <div class="term-bar">
+            <span class="tb-dot red"></span>
+            <span class="tb-dot amber"></span>
+            <span class="tb-dot green"></span>
+            <span class="tb-title">dns_lookup.sh — zsh</span>
+          </div>
+
+          <div class="term-body">
+            <!-- Simulated prompt display -->
+            <div class="term-prompt" aria-hidden="true">
+              <span class="tp-user">saad@pentest</span>
+              <span class="tp-sep">:</span>
+              <span class="tp-dir">~</span>
+              <span class="tp-sym">$</span>
+              <span class="tp-cmd">nslookup</span>
+              <span class="tp-arg" id="prompt-arg">_</span>
+            </div>
+
+            <p class="tool-desc">
+              Enter an <span class="c-cyan">IP address</span> to perform a reverse PTR lookup, or a
+              <span class="c-magenta">domain name</span> to resolve its A record IP. Results are
+              fetched live from Google's DNS-over-HTTPS API.
+            </p>
+
+            <div class="tool-row">
+              <label class="sr-only" for="dns-input">IP or Domain</label>
+              <div class="tool-input-wrap">
+                <span class="ti-icon" aria-hidden="true">🔍</span>
+                <input
+                  id="dns-input"
+                  type="text"
+                  class="tool-input"
+                  placeholder="e.g. 8.8.8.8 or github.com"
+                  autocomplete="off"
+                  spellcheck="false"
+                  aria-label="Enter IP address or domain name"
+                />
+              </div>
+              <button id="dns-btn" class="btn btn-primary">
+                Lookup
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              </button>
+            </div>
+
+            <!-- States -->
+            <div id="dns-loading" class="dns-state hidden" aria-live="polite">
+              <div class="ld-dots"><span></span><span></span><span></span></div>
+              Querying DNS servers...
+            </div>
+
+            <div id="dns-error" class="dns-state dns-err hidden" role="alert">
+              <span aria-hidden="true">⚠</span>
+              <span id="dns-err-msg">Query failed.</span>
+            </div>
+
+            <div id="dns-result" class="dns-result hidden" aria-live="polite">
+              <div class="res-header">
+                <span class="res-badge" id="res-badge">A</span>
+                <span class="res-ok">● RESOLVED</span>
+                
+              </div>
+              <div class="res-table">
+                <div class="res-row"><span class="rl">Query</span><span class="rv" id="rv-query">—</span></div>
+                <div class="res-row"><span class="rl">Type</span><span class="rv" id="rv-type">—</span></div>
+                <div class="res-row"><span class="rl">Result</span><span class="rv accent" id="rv-answer">—</span></div>
+                <div class="res-row" id="rv-ttl-row"><span class="rl">TTL</span><span class="rv" id="rv-ttl">—</span></div>
+                <div class="res-row" id="rv-all-row" style="display:none"><span class="rl">All IPs</span><span class="rv" id="rv-all">—</span></div>
+              </div>
+            </div>
+
+          </div><!-- /term-body -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONTACT  //06
+       ══════════════════════════════════════════════════════════════ -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <header class="sec-header reveal">
+        <span class="sec-tag">// 06</span>
+        <h2 class="sec-title">Get In Touch</h2>
+        <p class="sec-sub">Have a project in mind or want to discuss security? Let's talk.</p>
+      </header>
+
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <h3>Let's Connect</h3>
+          <p>I'm always open to new opportunities, cybersecurity challenges, or interesting collaborations. My inbox is open — reach out any time.</p>
+
+          <div class="c-links">
+            <a href="mailto:shksaad2003@gmail.com" class="c-item">
+              <span class="c-ico" aria-hidden="true">📧</span>
+              <div><span class="c-lbl">Email</span><span class="c-val">shksaad2003@gmail.com</span></div>
+            </a>
+            <a href="tel:+923105039260" class="c-item">
+              <span class="c-ico" aria-hidden="true">📱</span>
+              <div><span class="c-lbl">Phone</span><span class="c-val">+92 310 5039260</span></div>
+            </a>
+            <div class="c-item">
+              <span class="c-ico" aria-hidden="true">📍</span>
+              <div><span class="c-lbl">Location</span><span class="c-val">Islamabad, Pakistan</span></div>
+            </div>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="c-item">
+              <span class="c-ico" aria-hidden="true">💼</span>
+              <div><span class="c-lbl">LinkedIn</span><span class="c-val">Muhammad Saad Ahmed</span></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal">
+          <!--
+            NOTE: Replace the Formspree action URL below with your real Formspree form ID
+            once you register at formspree.io (format: https://formspree.io/f/{your_id})
+          -->
+          <form
+            id="contact-form"
+            action="https://formspree.io/f/xojzeqkd"
+            method="POST"
+            novalidate
+          >
+            <input type="hidden" name="_subject" value="New message from portfolio site" />
+
+            <div class="fg">
+              <label for="f-name">Name</label>
+              <input type="text"  id="f-name"  name="name"     required placeholder="Your Name"       autocomplete="name" />
+            </div>
+            <div class="fg">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="_replyto" required placeholder="your@email.com"   autocomplete="email" />
+            </div>
+            <div class="fg">
+              <label for="f-msg">Message</label>
+              <textarea id="f-msg" name="message" required placeholder="Tell me about your project or inquiry..." rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-btn" id="form-btn">
+              <span id="form-btn-txt">Send Message</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+
+            <div id="form-ok"  class="form-msg ok  hidden">✅ Message sent! I'll get back to you soon.</div>
+            <div id="form-err" class="form-msg err hidden">❌ Something went wrong. Please email me directly.</div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">S44D</div>
+      <p class="footer-tag">Building defenses. Breaking barriers.</p>
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2025 Muhammad Saad Ahmed</p>
+    </div>
+    <div class="footer-glow" aria-hidden="true"></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
